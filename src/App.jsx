@@ -300,7 +300,7 @@ function App() {
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
               <LinkContainer to="/">
-                <Navbar.Brand>cartify</Navbar.Brand>
+                <Navbar.Brand>Cartify-2.0</Navbar.Brand>
               </LinkContainer>
              
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
