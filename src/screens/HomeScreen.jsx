@@ -1,171 +1,16 @@
-// // // import { useEffect, useReducer } from 'react';
-// // // // import { Link } from 'react-router-dom';
-// // // import axios from 'axios';
-// // // import logger from 'use-reducer-logger';
-// // // import Row from 'react-bootstrap/Row';
-// // // import Col from 'react-bootstrap/Col';
-// // // import Product from '../components/Product';
-
-// // // const reducer = (state, action) => {
-// // //   switch (action.type) {
-// // //     case 'FETCH_REQUEST':
-// // //       return { ...state, loading: true };
-// // //     case 'FETCH_SUCCESS':
-// // //       return { ...state, products: action.payload, loading: false };
-// // //     case 'FETCH_FAIL':
-// // //       return { ...state, loading: false, error: action.payload };
-// // //     default:
-// // //       return state;
-// // //   }
-// // // };
-
-// // // function HomeScreen() {
-// // //   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
-// // //     products: [], // Ensure products is initialized as an empty array
-// // //     loading: true,
-// // //     error: '',
-// // //   });
-
-// // //   useEffect(() => {
-// // //     const fetchData = async () => {
-// // //       dispatch({ type: 'FETCH_REQUEST' });
-// // //       try {
-// // //         const result = await axios.get('http://localhost:5006/api/products');
-// // //         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
-// // //       } catch (err) {
-// // //         dispatch({ type: 'FETCH_FAIL', payload: err.message });
-// // //       }
-// // //     };
-// // //     fetchData();
-// // //   }, []);
-
-// // //   return (
-// // //     <div>
-// // //       <h1>Featured Products</h1>
-// // //       <div className="products">
-// // //         {loading ? (
-// // //           <div>Loading...</div>
-// // //         ) : error ? (
-// // //           <div>{error}</div>
-// // //         ) : (
-// // //           <>
-// // //             {Array.isArray(products) && products.length > 0 ? (
-// // //               <Row>
-// // //                 {products.map((product) => (
-// // //                   <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-// // //                     <Product product={product}></Product>
-// // //                   </Col>
-// // //                 ))}
-// // //               </Row>
-// // //             ) : (
-// // //               <div>No products available</div>
-// // //             )}
-// // //           </>
-// // //         )}
-// // //       </div>
-// // //     </div>
-// // //   );
-// // // }
-
-// // // export default HomeScreen;
-// // import { useEffect, useReducer } from 'react';
-// // import axios from 'axios';
-// // import logger from 'use-reducer-logger';
-
-// // import Row from 'react-bootstrap/Row';
-// // import Col from 'react-bootstrap/Col';
-// // import Product from '../components/Product';
-// // import { Helmet } from 'react-helmet-async';
-// // // import data from '../data';
-
-// // const reducer = (state, action) => {
-// //   switch (action.type) {
-// //     case 'FETCH_REQUEST':
-// //       return { ...state, loading: true };
-// //     case 'FETCH_SUCCESS':
-// //       return { ...state, products: action.payload, loading: false };
-// //     case 'FETCH_FAIL':
-// //       return { ...state, loading: false, error: action.payload };
-// //     default:
-// //       return state;
-// //   }
-// // };
-// // function HomeScreen() {
-// //   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
-// //     products: [],
-// //     loading: true,
-// //     error: '',
-// //   });
-// //   // const [products, setProducts] = useState([]);
-// //   useEffect(() => {
-// //     const fetchData = async () => {
-// //       dispatch({ type: 'FETCH_REQUEST' });
-// //       try {
-// //         const result = await axios.get('http://localhost:5006/api/products');
-// //         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
-// //       } catch (err) {
-// //         dispatch({ type: 'FETCH_FAIL', payload: err.message });
-// //       }
-// //       // setProducts(result.data);
-// //     };
-// //     fetchData();
-// //   }, []);
-// //   return (
-// //     <div>
-// //       <Helmet>
-// //         <title>Amazona</title>
-// //       </Helmet>
-// //       <h1>Featured Products</h1>
-// //       <div className="products">
-// //         {loading ? (
-// //           <div>Loading...</div>
-// //         ) : error ? (
-// //           <div>{error}</div>
-// //         ) : (
-// //           <Row>
-// //             {products.map((product) => (
-// //               <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-// //                 <Product product={product}></Product>
-// //               </Col>
-// //             ))}
-// //           </Row>
-// //         )}
-// //       </div>
-// //     </div>
-// //   );
-// // }
-// // export default HomeScreen;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useEffect, useReducer } from 'react';
-// import axios from 'axios';
-// import logger from 'use-reducer-logger';
+// import { useReducer, useEffect } from 'react';
+// // import { Link } from 'react-router-dom';
+// import axios from "axios";
+// import logger from "use-reducer-logger";
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 // import Product from '../components/Product';
 // import { Helmet } from 'react-helmet-async';
 // import LoadingBox from '../components/LoadingBox';
 // import MessageBox from '../components/MessageBox';
-// // import data from '../data';
+
 
 // const reducer = (state, action) => {
 //   switch (action.type) {
@@ -174,158 +19,61 @@
 //     case 'FETCH_SUCCESS':
 //       return { ...state, products: action.payload, loading: false };
 //     case 'FETCH_FAIL':
-//       return { ...state, loading: false, error: action.payload };
+//       return { ...state, error: action.payload,loading: false,  };
 //     default:
 //       return state;
 //   }
 // };
+
 // function HomeScreen() {
 //   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
-//     products: [],
+    
 //     loading: true,
+//     products: [],
 //     error: '',
 //   });
-//   // const [products, setProducts] = useState([]);
+
 //   useEffect(() => {
 //     const fetchData = async () => {
 //       dispatch({ type: 'FETCH_REQUEST' });
 //       try {
-//         const result = await axios.get(' http://localhost:5006/api/products');
+//         const result = await axios.get('https://demobackecommerce-1.onrender.com/api/products/');
 //         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
-//       } catch (err) {
-//         dispatch({ type: 'FETCH_FAIL', payload: err.message });
+//       } catch (error) {
+//         dispatch({ type: 'FETCH_FAIL', payload: error.message });
 //       }
-//       // setProducts(result.data);
 //     };
 //     fetchData();
 //   }, []);
+
 //   return (
 //     <div>
+      
 //       <Helmet>
-//         <title>Amazona</title>
+//         <title>Shopify</title>
 //       </Helmet>
-//       <h1>Featured Products</h1>
-// //       <div className="products">
-// //         {loading ? (
-          
-// //           <LoadingBox />
-// //         ) : error ? (
-        
-// //           <MessageBox variant="danger">{error}</MessageBox>
-// //         ) : (
-// //           <Row>
-// //             {products.map((product) => (
-// //               <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-// //                 <Product product={product}></Product>
-// //               </Col>
-// //             ))}
-// //           </Row>
-// //         )}
-// //       </div>
-// //     </div>
-// //   );
-// // }
-// // export default HomeScreen;
 
 
-// // import { Link } from 'react-router-dom';
-// // // import data from '../data';
 
-// // function HomeScreen() {
-// //   return (
-// //     <div>
-// //       <h1>Featured Products</h1>
-// //       <div className="products">
-// //         {data.products.map((product) => (
-// //           <div className="product" key={product.slug}>
-// //             <Link to={`http://localhost:5000/product/${product.slug}`}>
-// //               <img src={product.image} alt={product.name} />
-// //             </Link>
-// //             <div className="product-info">
-// //               <Link to={`http://localhost:5000/product/${product.slug}`}>
-// //                 <p>{product.name}</p>
-// //               </Link>
-// //               <p>
-// //                 <strong>${product.price}</strong>
-// //               </p>
-// //               <button>Add to cart</button>
-// //             </div>
-// //           </div>
-// //         ))}
-// //       </div>
-// //     </div>
-// //   );
-// // }
-// // export default HomeScreen;
-// import { useState,useReducer,useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// // import data from '../data'; // Uncommented the import statement for data
-// import axios from "axios"
-// import logger from "use-reducer-logger"
-
-
-// const reducer = (state, action) => {
-//   switch (action.type) {
-//     case 'FETCH_REQUEST':
-//       return { ...state, loading: true };
-//     case 'FETCH_SUCCESS':
-//       return { ...state, products: action.payload, loading: false };
-//     case 'FETCH_FAIL':
-//       return { ...state, loading: false, error: action.payload };
-//     default:
-//       return state;
-//   }
-// };
-
-
-// function HomeScreen() {
-//   // const [products, setProducts] = useState([]);
-//   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
-//     products: [],
-//     loading: true,
-//     error: '',
-//   });
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       // 
-//       dispatch({ type: 'FETCH_REQUEST' });
-//       try {
-//         const result = await axios.get('/api/products');
-//         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
-//       } catch (err) {
-//         dispatch({ type: 'FETCH_FAIL', payload: err.message });
-//       }
-//     };
-//     fetchData();
-//   }, []);
-//   return (
-//     <div>
 //       <h1>Featured Products</h1>
 //       <div className="products">
-//         {/* {data.products.map((product) => ( */}
 //         {loading ? (
-//           <div>Loading...</div>
+//           <LoadingBox/>
 //         ) : error ? (
-//           <div>{error}</div>
+//           <MessageBox variant="danger">{error}</MessageBox>
 //         ) : (
-//           products.map((product) => (
-//             <div className="product" key={product.slug}>
-//               <Link to={`http://localhost:5001/product/${product.slug}`}>
-//               <img src={product.image} alt={product.name} />
-//               </Link>
-//               <div className="product-info">
-//                 <Link to={`/product/${product.slug}`}>
-//                   <p>{product.name}</p>
-//                 </Link>
-//                 <p>
-//                   <strong>${product.price}</strong>
-//                 </p>
-//                 <button>Add to cart</button>
-//               </div>
-//             </div>
+          
+//           <Row>
+//             {products.map((product) => (
+//               <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
+//                 <Product product={product}></Product>
+//               </Col>
+//             ))}
+//           </Row>
+          
          
-//         ))
-//       )}
+          
+//         )}
 //       </div>
 //     </div>
 //   );
@@ -336,16 +84,15 @@
 
 
 import { useReducer, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-import axios from "axios";
-import logger from "use-reducer-logger";
+import axios from 'axios';
+import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Product from '../components/Product';
+import Carousel from 'react-bootstrap/Carousel';
 import { Helmet } from 'react-helmet-async';
+import Product from '../components/Product';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -354,7 +101,7 @@ const reducer = (state, action) => {
     case 'FETCH_SUCCESS':
       return { ...state, products: action.payload, loading: false };
     case 'FETCH_FAIL':
-      return { ...state, error: action.payload,loading: false,  };
+      return { ...state, error: action.payload, loading: false };
     default:
       return state;
   }
@@ -362,7 +109,6 @@ const reducer = (state, action) => {
 
 function HomeScreen() {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
-    
     loading: true,
     products: [],
     error: '',
@@ -372,7 +118,7 @@ function HomeScreen() {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios.get('https://demobackecommerce-1.onrender.com/api/products');
+        const result = await axios.get('https://demobackecommerce-1.onrender.com/api/products/');
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (error) {
         dispatch({ type: 'FETCH_FAIL', payload: error.message });
@@ -383,18 +129,54 @@ function HomeScreen() {
 
   return (
     <div>
-      
       <Helmet>
-        <title>Shopify</title>
+        <title>Cartify</title>
       </Helmet>
+
+      {/* Bootstrap Carousel */}
+      <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2023/12/FC-29-DEC-23-920x518.png"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>Coming Soon</h3>
+            <p>Stay tuned for our exciting new products!</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 "
+            src="https://admin.thecricketer.com/weblab/sites/96c8b790-b593-bfda-0ba4-ecd3a9fdefc2/resources/images/site/gray-nicolls_shockwave_gen_2.3_4_star.png"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h3>Coming Soon</h3>
+            <p>New arrivals are just around the corner!</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://i.ytimg.com/vi/t9LJujiOMpw/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-DoACuAiKAgwIABABGGcgZyhnMA8=&rs=AOn4CLBfqvd1HUymHoxa1-QsZO_1dvpN4Q"
+            alt="Third slide"
+          />
+          <Carousel.Caption>
+            <h3>Coming Soon</h3>
+            <p>Discover what's next at our store.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
-          <LoadingBox/>
+          <LoadingBox />
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
-          
           <Row>
             {products.map((product) => (
               <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
@@ -402,9 +184,6 @@ function HomeScreen() {
               </Col>
             ))}
           </Row>
-          
-         
-          
         )}
       </div>
     </div>
