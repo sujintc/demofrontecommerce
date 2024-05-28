@@ -70,7 +70,11 @@ function App() {
                 <i className="fas fa-bars"></i>
               </Button>
               <LinkContainer to="/">
+<<<<<<< HEAD
                 <Navbar.Brand>  Cartify</Navbar.Brand>
+=======
+                <Navbar.Brand>Cartify-2.0</Navbar.Brand>
+>>>>>>> 6893a1fd9554d6304dc6c98e7e45ffc8acee6faa
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
