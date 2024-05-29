@@ -349,7 +349,7 @@
 //       dispatch({ type: 'FETCH_REQUEST' });
 //       try {
 //         const { data } = await axios.get(
-//           ` http://localhost:5002/api/orders/mine`,
+//           ` https://demobackecommerce-1.onrender.com/api/orders/mine`,
 //           { headers: { Authorization: `Bearer ${userInfo.token}` } }
 //         );
 //         dispatch({ type: 'FETCH_SUCCESS', payload: data });
@@ -454,7 +454,7 @@ export default function OrderHistoryScreen() {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const { data } = await axios.get('http://localhost:5002/api/orders/mine', {
+        const { data } = await axios.get('https://demobackecommerce-1.onrender.com/api/orders/mine', {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({ type: 'FETCH_SUCCESS', payload: data });

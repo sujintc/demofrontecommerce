@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 import Badge from 'react-bootstrap/Badge';
-import Nav from 'react-bootstrap/Nav';
+import Nav from 'react-bootstrap/Nav';  
 import { useContext, useState, useEffect } from 'react';
 import { Store } from './Store';
 import { Link } from 'react-router-dom';
@@ -70,11 +70,7 @@ function App() {
                 <i className="fas fa-bars"></i>
               </Button>
               <LinkContainer to="/">
-<<<<<<< HEAD
                 <Navbar.Brand>  Cartify</Navbar.Brand>
-=======
-                <Navbar.Brand>Cartify-2.0</Navbar.Brand>
->>>>>>> 6893a1fd9554d6304dc6c98e7e45ffc8acee6faa
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
