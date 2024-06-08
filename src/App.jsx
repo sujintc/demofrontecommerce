@@ -89,9 +89,9 @@ function App() {
                       <LinkContainer to="/profile">
                         <NavDropdown.Item>User Profile</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/orderhistory">
+{/*                       <LinkContainer to="/orderhistory">
                         <NavDropdown.Item>Order History</NavDropdown.Item>
-                      </LinkContainer>
+                      </LinkContainer> */}
                       <NavDropdown.Divider />
                       <NavDropdown.Item onClick={signoutHandler}>Sign Out</NavDropdown.Item>
                     </NavDropdown>
